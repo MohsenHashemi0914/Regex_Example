@@ -156,48 +156,97 @@ using System.Text.RegularExpressions;
 
 // *********************************************************************************
 
-Console.WriteLine("---------------Word boundry assertion----------------"); // \b and \B
+//Console.WriteLine("---------------Word boundry assertion----------------"); // \b and \B
 
-var text1 = "I have a cat.It acatches mouse and crow for eat.I have a acatalog.";
-var matches1 = Regex.Matches(text1, @"\Bcat\B");
+//var text1 = "I have a cat.It acatches mouse and crow for eat.I have a acatalog.";
+//var matches1 = Regex.Matches(text1, @"\Bcat\B");
 
-foreach (Match match in matches1)
-{
-    Console.WriteLine($"Found {match.Value} at position {match.Index} for word boundry assertion.");
-}
+//foreach (Match match in matches1)
+//{
+//    Console.WriteLine($"Found {match.Value} at position {match.Index} for word boundry assertion.");
+//}
 
-Console.WriteLine("---------------Look ahead assertion----------------"); // (?=) for positive and (?!) for negative
+//Console.WriteLine("---------------Look ahead assertion----------------"); // (?=) for positive and (?!) for negative
 
-var text2 = "I have applepie and apple juice at the apple farm.";
-var matches2 = Regex.Matches(text2, @"apple(?=pie)");
+//var text2 = "I have applepie and apple juice at the apple farm.";
+//var matches2 = Regex.Matches(text2, @"apple(?=pie)");
 
-foreach (Match match in matches2)
-{
-    Console.WriteLine($"Found {match.Value} at position {match.Index} for positive look ahead assertion.");
-}
+//foreach (Match match in matches2)
+//{
+//    Console.WriteLine($"Found {match.Value} at position {match.Index} for positive look ahead assertion.");
+//}
 
-var matches3 = Regex.Matches(text2, @"apple(?!pie)");
+//var matches3 = Regex.Matches(text2, @"apple(?!pie)");
 
-foreach (Match match in matches3)
-{
-    Console.WriteLine($"Found {match.Value} at position {match.Index} for negative look ahead assertion.");
-}
+//foreach (Match match in matches3)
+//{
+//    Console.WriteLine($"Found {match.Value} at position {match.Index} for negative look ahead assertion.");
+//}
 
-Console.WriteLine("---------------Look behind assertion----------------"); // (?<=) for positive and (?<!) for negative
+//Console.WriteLine("---------------Look behind assertion----------------"); // (?<=) for positive and (?<!) for negative
 
-var text3 = "The sky is blue and the grass is green.blue    color";
-var matches4 = Regex.Matches(text3, @"(?<=blue\s+)\b\w+\b");
+//var text3 = "The sky is blue and the grass is green.blue    color";
+//var matches4 = Regex.Matches(text3, @"(?<=blue\s+)\b\w+\b");
 
-foreach (Match match in matches4)
-{
-    Console.WriteLine($"Found {match.Value} at position {match.Index} for positive look behind assertion.");
-}
+//foreach (Match match in matches4)
+//{
+//    Console.WriteLine($"Found {match.Value} at position {match.Index} for positive look behind assertion.");
+//}
 
-var matches5 = Regex.Matches(text3, @"(?<!blue\s+)\b\w+\b");
+//var matches5 = Regex.Matches(text3, @"(?<!blue\s+)\b\w+\b");
 
-foreach (Match match in matches5)
-{
-    Console.WriteLine($"Found {match.Value} at position {match.Index} for negative look behind assertion.");
-}
+//foreach (Match match in matches5)
+//{
+//    Console.WriteLine($"Found {match.Value} at position {match.Index} for negative look behind assertion.");
+//}
+
+//Console.WriteLine("---------------Anchor assertion----------------");
+
+//var text4 = "Hello my friend";
+//text4 += Environment.NewLine;
+//text4 += "My name is Mohsen";
+
+//Console.WriteLine(Regex.IsMatch(text4, @"^Hello", RegexOptions.Multiline));
+//Console.WriteLine(Regex.IsMatch(text4, @"^My", RegexOptions.Multiline));
+//Console.WriteLine(Regex.IsMatch(text4, @"friend(\r)?$", RegexOptions.Multiline));
+//Console.WriteLine(Regex.IsMatch(text4, @"Mohsen$", RegexOptions.Multiline));
+
+// *********************************************************************************
+
+//Console.WriteLine("---------------Groups----------------");
+
+//var phoneNumber = "09179550421";
+//var match1 = Regex.Match(phoneNumber, @"(09\d{2})(\d{3})(\d{4})");
+
+//Console.WriteLine($"Pre number: {match1.Groups[1].Value}");
+//Console.WriteLine($"Second section: {match1.Groups[2].Value}");
+//Console.WriteLine($"The last section: {match1.Groups[3].Value}");
+
+//var match2 = Regex.Match(phoneNumber, @"(?<prenumber>09\d{2})(?<s2>\d{3})(?<s3>\d{4})");
+
+//Console.WriteLine($"Pre number by name: {match2.Groups["prenumber"].Value}");
+//Console.WriteLine($"Second section by name: {match2.Groups["s2"].Value}");
+//Console.WriteLine($"The last section by name: {match2.Groups["s3"].Value}");
+
+//var regex = new Regex(@"(?<Irancell>(^093\d{8}$)|(^9893\d{8}$))|(?<HamrahAval>(^091\d{8}$)|(^9891\d{8}$))");
+//var match3 = regex.Match(phoneNumber);
+
+//if (match3.Success)
+//{
+//    if (match3.Groups["Irancell"].Success)
+//    {
+//        Console.WriteLine("Irancell number");
+//    }
+//    else
+//    {
+//        Console.WriteLine("HamrahAval number");
+//    }
+//}
+//else
+//{
+//    Console.WriteLine("Invalid phone number format");
+//}
+
+// *********************************************************************************
 
 Console.ReadLine();
