@@ -39,8 +39,8 @@ using System.Text.RegularExpressions;
 
 //Console.WriteLine("----------------[abcd][^abcd]----------------");
 
-//Console.WriteLine(Regex.IsMatch("cat", @"[ab]"));
-//var matches1 = Regex.Matches("cat", @"[ab]");
+//Console.WriteLine(Regex.IsMatch("cabt", @"[ab]+"));
+//var matches1 = Regex.Matches("cabt", @"[ab]+");
 
 //Console.WriteLine(Regex.IsMatch("cat", @"[^ab]"));
 //var matches2 = Regex.Matches("cat", @"[^ab]");
@@ -248,5 +248,20 @@ using System.Text.RegularExpressions;
 //}
 
 // *********************************************************************************
+
+//Console.WriteLine("---------------Split and replace----------------");
+
+//var text = "text1 , text2,   text3,text4";
+//var matches = Regex.Matches(text, @"[ ,]+");
+//var values = Regex.Split(text, @"[ ,]+");
+//foreach (var value in values)
+//{
+//    Console.WriteLine(value);
+//}
+
+//var text2 = "This is a text + for testing. I wanna replace all points with another sign.";
+//var replecedText = Regex.Replace(text2, @"\.", "!");
+//var replecedText2 = Regex.Replace(replecedText, @"\+", "$");
+//Console.WriteLine(replecedText2);
 
 Console.ReadLine();
